@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2r1n84se0o67"]
+[gd_scene format=3 uid="uid://2r1n84se0o67"]
 
 [ext_resource type="Script" uid="uid://cgoupgds1d4vi" path="res://scenes/ally/building/house.gd" id="1_qluad"]
 [ext_resource type="Texture2D" uid="uid://cqop46k1qn3tq" path="res://art/Factions/Goblins/Buildings/Wood_House/Goblin_House_Yellow.png" id="2_qluad"]
@@ -14,35 +14,34 @@ height = 110.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pmem"]
 bg_color = Color(0.858579, 0, 0.166135, 1)
 
-[node name="GoblinHouseYellow" type="CharacterBody2D"]
+[node name="GoblinHouseYellow" type="CharacterBody2D" unique_id=30976464]
 script = ExtResource("1_qluad")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2057100671]
 y_sort_enabled = true
 position = Vector2(5.42101e-20, 16)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_qluad")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1950640566]
 position = Vector2(0, 44)
 shape = SubResource("CapsuleShape2D_7ham6")
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=1911845954]
 
-[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("progress_bar") instance=ExtResource("3_8qgt3")]
+[node name="HealthComponent" parent="Components" unique_id=93264885 instance=ExtResource("3_8qgt3")]
 position = Vector2(0, -96)
 script = ExtResource("4_3xyla")
-progress_bar = NodePath("../../ProgressBar")
-current_health = 100
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=808620725]
 visible = false
 z_index = 90
 y_sort_enabled = true
-offset_left = -120.0
-offset_top = -189.0
-offset_right = 49.0
-offset_bottom = -141.0
+offset_left = -66.0
+offset_top = -116.0
+offset_right = 30.622559
+offset_bottom = -99.43388
 scale = Vector2(1.37649, 0.543279)
 theme_override_styles/background = SubResource("StyleBoxFlat_6dv47")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6pmem")
+show_percentage = false

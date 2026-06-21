@@ -1,4 +1,4 @@
-extends Node2D 
+extends Node2D
 
 const GOBLIN = preload("res://scenes/enemy/Goblin.tscn")
 const TECHIE = preload("uid://bx4dicnqdyccp")
@@ -7,20 +7,22 @@ const ARCHER = preload("uid://0g50ua6nypjf")
 
 
 
-@onready var wave_label: Label = $CanvasLayer/WaveLabel
+#@onready var wave_label: Label = $CanvasLayer/WaveLabel
 
-@onready var game_score: CanvasLayer = $"../GameScore"
+
+@onready var game_score: CanvasLayer = $GameScore
 
 ## variables del jugador ##
 var hp : int
 var hpMax : int
 var hpDmg : int
 var hpReg : int
-var exp : int
+
 var lvl : int
 
-var gold : int
 
+var gold
+var exp
 var wave : int
 var min: int = 10
 var sec: int = 0
@@ -37,10 +39,17 @@ var damage_multiplier: float = pow(1.0, wave - 1)
 var hp_enemy_display = round(health_multiplier * 100)
 
 @onready var level_up_menu: CanvasLayer = $LevelUpMenu
-@onready var castle: CharacterBody2D = $Castle
+
 @onready var Seconds: Timer = $Seconds
-@onready var EnemySpawner: Timer = $EnemySpawnerTimer
+#@onready var EnemySpawner: Timer = $EnemySpawnerTimer
 @onready var player = get_node("/root/World/Player")
+@onready var HP_label = get_node("/root/World/HUD/HP_Label")
+#@onready var Level_label = get_node("/root/World/HUD/Level_Label")
+#@onready var EXP_label = get_node("/root/World/HUD/EXP_Label")
+#@onready var gold_label = get_node("/root/World/HUD/gold_Label")
+#@onready var wood_label = get_node("/root/World/HUD/wood_Label")
+
+
 @onready var wave_cooldown: Timer = $Wave_Cooldown
 
 
@@ -108,16 +117,26 @@ func is_wave_completed():
 		return all_dead
 	else:
 		return false
+		
+func _process(delta: float) -> void:
 	
+	if Input.is_action_just_pressed("TAB"):
 
+		DebugManager.show_health_bars = !DebugManager.show_health_bars
+
+		for health in get_tree().get_nodes_in_group("health_components"):
+			health.update_health_bar()
+			
 func _physics_process(_delta: float) -> void:
 	
+	
+			
 	hpDmg = (hpMax - hp) 
 	$HUD/HP_Label.text = "HP: " + str(hp) + "/" + str(hpMax)
 	$HUD/Exp_Label.text = "EXP : " + str(exp)
 	$HUD/Lvl_Label.text = "Level : " + str(lvl)
 	$HUD/ATK_Label.text = "ATK: " + str(player.attack_damage)
-	#$HUD/enemy_HP.text = "Enemy HP: " + str(hp_enemy_display)
+	$HUD/enemy_HP.text = "Enemy HP: " + str(hp_enemy_display)
 	$HUD/enemy_HP.text = "Enemy HP: x%.2f" % health_multiplier
 	
 	if is_wave_completed():
@@ -229,6 +248,7 @@ func victory():
 	$GameScore/Title.text = "___ YOU WON ___ " 
 	$GameScore/Waves.text = "WAVES SURVIVE: " + str(wave-1)
 	$GameScore.show()
+	
 
 
 

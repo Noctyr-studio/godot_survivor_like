@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var buttons := $VBoxContainer
-@onready var label: Label = $Label
+#@onready var label: Label = $Label
 @onready var color_rect: ColorRect = $ColorRect
 @onready var player = get_node("/root/World/Player")
 var is_paused := false

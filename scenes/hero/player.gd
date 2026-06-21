@@ -1,4 +1,4 @@
-class_name Player extends Info
+class_name Player extends CharacterBody2D
 
 
 @onready var sprite_animation : AnimatedSprite2D = $AnimatedSprite2D
@@ -13,10 +13,11 @@ class_name Player extends Info
 
 @onready var level_up_menu: CanvasLayer = $"../LevelUpMenu"
 
-@onready var trader_menu: CanvasLayer = $"../TraderMenu"
+
 @onready var shaman_menu: CanvasLayer = $"../ShamanMenu"
 @onready var captain_menu: CanvasLayer = $"../CaptainMenu"
 
+@onready var world = get_node("/root/World")
 @onready var exp_label = get_node("/root/World/HUD/Exp_Label")
 @onready var lvl_label = get_node("/root/World/HUD/Lvl_Label")
 #@onready var game_score = get_node("/root/World/GameScore")
@@ -31,10 +32,21 @@ class_name Player extends Info
 
 
 
-@onready var nodo: Node2D = $Flames
+
 @onready var inventory_tween: Tween = create_tween()
 
 @onready var hp_reg: Timer = $HP_Reg
+
+signal attack_finished
+
+var disable_mouse: bool = false
+var move_speed
+var attack_damage
+var is_attack = false
+var down = false
+var up = false
+var running = false
+var can_shoot: bool = true
 
 
 
@@ -313,7 +325,7 @@ func _on_area_lr_body_entered(body: Node2D) -> void:
 		body.in_attack_Player_range = true
 		
 	elif body is Trader:	
-		trader_menu.show()
+	
 		inventory_open= false
 		toggle_inventory()
 		world.shop = true
@@ -331,7 +343,7 @@ func _on_area_lr_body_exited(body: Node2D) -> void:
 		body.in_attack_Player_range = false
 		
 	elif body is Trader:
-		trader_menu.hide()
+	
 		inventory_open= true
 		toggle_inventory()
 		world.shop = false

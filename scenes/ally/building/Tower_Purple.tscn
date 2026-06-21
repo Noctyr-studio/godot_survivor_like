@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcnmkpxwu5vym"]
+[gd_scene format=3 uid="uid://bcnmkpxwu5vym"]
 
 [ext_resource type="Script" uid="uid://cgoupgds1d4vi" path="res://scenes/ally/building/house.gd" id="1_1ymb0"]
 [ext_resource type="Texture2D" uid="uid://bdb5yh4hcpuyf" path="res://art/Factions/Knights/Buildings/Tower/Tower_Purple.png" id="2_1ymb0"]
@@ -14,37 +14,36 @@ height = 102.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pmem"]
 bg_color = Color(0.858579, 0, 0.166135, 1)
 
-[node name="Tower_Purple" type="CharacterBody2D"]
+[node name="Tower_Purple" type="CharacterBody2D" unique_id=1819591548]
 script = ExtResource("1_1ymb0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975649486]
 y_sort_enabled = true
 position = Vector2(0, 26)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_1ymb0")
 offset = Vector2(0, -50)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=656679768]
 position = Vector2(-2, 43)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2owcu")
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=143016215]
 
-[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("progress_bar") instance=ExtResource("3_q5sql")]
+[node name="HealthComponent" parent="Components" unique_id=276309331 instance=ExtResource("3_q5sql")]
 position = Vector2(0, -96)
 script = ExtResource("4_v8h08")
-progress_bar = NodePath("../../ProgressBar")
-current_health = 100
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1452563972]
 visible = false
 z_index = 90
 y_sort_enabled = true
-offset_left = -120.0
-offset_top = -189.0
-offset_right = 49.0
-offset_bottom = -141.0
+offset_left = -78.0
+offset_top = -171.0
+offset_right = 37.511185
+offset_bottom = -154.4339
 scale = Vector2(1.37649, 0.543279)
 theme_override_styles/background = SubResource("StyleBoxFlat_6dv47")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6pmem")
+show_percentage = false

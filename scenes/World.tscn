@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c4kqxardye58q" path="res://scenes/hero/Player.tscn" id="1_5euw2"]
 [ext_resource type="Script" uid="uid://8frursiijycr" path="res://scenes/world.gd" id="1_ro7oq"]
 [ext_resource type="PackedScene" uid="uid://bflrrr4ouvpaa" path="res://UI/GameScore.tscn" id="2_128ka"]
-[ext_resource type="PackedScene" uid="uid://bd0hv10crsk8d" path="res://scenes/shop/TraderMenu.tscn" id="3_aqlsr"]
 [ext_resource type="PackedScene" uid="uid://cmjpwpkbbf20o" path="res://UI/LevelUpMenu.tscn" id="3_b64vv"]
 [ext_resource type="Texture2D" uid="uid://3gdvbr1d53k0" path="res://art/Resources/Trees/Tree.png" id="4_bovj0"]
 [ext_resource type="Texture2D" uid="uid://vwwmgdekpgrc" path="res://art/Terrain/Ground/Tilemap_Elevation.png" id="4_ddnin"]
@@ -24,10 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bakdhttl8seec" path="res://inventory/scenes/Item-6-WOOD.tscn" id="27_128ka"]
 [ext_resource type="PackedScene" uid="uid://6bjk6r2tlqjf" path="res://scenes/enemy/building/GoblinHouse.tscn" id="27_lawxi"]
 [ext_resource type="PackedScene" uid="uid://dwmgxjtiwsgd5" path="res://scenes/ally/building/GoldMine.tscn" id="28_aqlsr"]
-[ext_resource type="PackedScene" uid="uid://bw2ni0mqgj8i3" path="res://scenes/enemy/building/WoodTower.tscn" id="28_n2fr6"]
-[ext_resource type="PackedScene" uid="uid://dqpdhafbr5w10" path="res://scenes/ally/building/Fortress.tscn" id="29_n2fr6"]
 [ext_resource type="PackedScene" uid="uid://bcnmkpxwu5vym" path="res://scenes/ally/building/Tower_Purple.tscn" id="33_b64vv"]
-[ext_resource type="PackedScene" uid="uid://d4baxbfb7rfxk" path="res://scenes/enemy/building/WoodTowerYellow.tscn" id="35_2pad8"]
 [ext_resource type="PackedScene" uid="uid://dl40t0ki15dk" path="res://scenes/FX/Bonfire.tscn" id="35_e4yt5"]
 [ext_resource type="PackedScene" uid="uid://2r1n84se0o67" path="res://scenes/enemy/building/GoblinHouseYellow.tscn" id="36_e4yt5"]
 
@@ -523,7 +519,6 @@ autostart = true
 
 [node name="GameScore" parent="." unique_id=2110127478 instance=ExtResource("2_128ka")]
 process_mode = 2
-script = null
 
 [node name="Wave_Cooldown" type="Timer" parent="." unique_id=1434820721]
 process_mode = 4
@@ -531,9 +526,6 @@ autostart = true
 
 [node name="LevelUpMenu" parent="." unique_id=2106666344 instance=ExtResource("3_b64vv")]
 process_mode = 3
-visible = false
-
-[node name="TraderMenu" parent="." unique_id=1344758123 instance=ExtResource("3_aqlsr")]
 visible = false
 
 [node name="ShamanMenu" parent="." unique_id=2064418969 instance=ExtResource("5_x70b3")]
@@ -602,20 +594,8 @@ position = Vector2(436, 4257)
 [node name="GoblinHouse4" parent="Decoration" unique_id=1144446343 instance=ExtResource("27_lawxi")]
 position = Vector2(782, 4509)
 
-[node name="WoodTower" parent="Decoration" unique_id=584213366 instance=ExtResource("28_n2fr6")]
-position = Vector2(1280, 4520)
-
-[node name="WoodTower2" parent="Decoration" unique_id=1745670957 instance=ExtResource("28_n2fr6")]
-position = Vector2(502, 3959)
-
 [node name="GoldMine3" parent="Decoration" unique_id=1267368821 instance=ExtResource("28_aqlsr")]
 position = Vector2(4461.74, 381.248)
-
-[node name="WoodTowerYellow" parent="Decoration" unique_id=1157627918 instance=ExtResource("35_2pad8")]
-position = Vector2(4548.75, 999.515)
-
-[node name="WoodTowerYellow_2" parent="Decoration" unique_id=1004692249 instance=ExtResource("35_2pad8")]
-position = Vector2(3973.07, 342.921)
 
 [node name="GoblinHouseYellow" parent="Decoration" unique_id=98480759 instance=ExtResource("36_e4yt5")]
 position = Vector2(4058.06, 652.559)
@@ -692,9 +672,6 @@ position = Vector2(4568.982, 673.73956)
 
 [node name="gold" parent="Items" unique_id=1073829193 instance=ExtResource("26_n2fr6")]
 position = Vector2(4596.299, 578.9319)
-
-[node name="Fortress" parent="." unique_id=872328722 instance=ExtResource("29_n2fr6")]
-position = Vector2(632, 623)
 
 [connection signal="timeout" from="Seconds" to="." method="_on_seconds_timeout"]
 [connection signal="timeout" from="Wave_Cooldown" to="." method="_on_wave_cooldown_timeout"]

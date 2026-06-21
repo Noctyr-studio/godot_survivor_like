@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnmeyd0ffs04i"]
+[gd_scene format=3 uid="uid://bnmeyd0ffs04i"]
 
 [ext_resource type="Texture2D" uid="uid://d010jcospqex4" path="res://art/UI/Banners/Carved_9Slides.png" id="2_4g7im"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26ian"]
 texture = ExtResource("2_4g7im")
 
-[node name="Volume" type="Control"]
+[node name="Volume" type="Control" unique_id=329437636]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 481.5
@@ -13,7 +13,7 @@ offset_top = 168.0
 offset_right = 801.0
 offset_bottom = 567.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=575286642]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_26ian")
 
-[node name="MusicLabel" type="Label" parent="."]
+[node name="MusicLabel" type="Label" parent="." unique_id=1170450695]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,7 +45,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Music"
 
-[node name="Music" type="HSlider" parent="."]
+[node name="Music" type="HSlider" parent="." unique_id=1061080083]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
 
-[node name="SFXLabel" type="Label" parent="."]
+[node name="SFXLabel" type="Label" parent="." unique_id=1171856762]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.499
@@ -77,7 +77,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "SFX"
 
-[node name="SFX" type="HSlider" parent="."]
+[node name="SFX" type="HSlider" parent="." unique_id=331182059]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 value = 50.0
 
-[node name="VolumeBack" type="MenuButton" parent="."]
+[node name="VolumeBack" type="MenuButton" parent="." unique_id=1184892233]
 layout_mode = 0
 offset_top = 250.0
 offset_right = 317.0

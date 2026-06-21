@@ -6,7 +6,8 @@ var dir:float
 var speed=750
 var target
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var player = get_node("/root/World/Player")
 

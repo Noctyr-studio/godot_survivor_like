@@ -2,15 +2,20 @@ extends Control
 
 # ===================== NODOS =====================
 @onready var main_panel = $Main
-@onready var options_panel = $Options
+#@onready var options_panel = $Options
 @onready var credits_panel = $Credits
 @onready var volume_panel = $Volume
-@onready var resolution_panel = $Resolution
+#@onready var resolution_panel = $Resolution
+@onready var volume: Control = $Volume
+@onready var texture_rect: TextureRect = $TextureRect
 
 
-@onready var resolution_button: OptionButton = $Resolution/ResolutionButton
-@onready var fullscreen_check: CheckBox = $Resolution/FullscreenCheck
-@onready var apply_button: Button = $Resolution/ApplyButton
+
+#@onready var resolution_button: OptionButton = $Resolution/ResolutionButton
+
+@onready var fullscreen_button: TextureButton = $Fullscreen/FullscreenButton
+
+#@onready var apply_button: Button = $Resolution/ApplyButton
 
 @onready var apply_button_vol: Button = $Volume/ApplyButtonVOL
 @onready var restore_button_vol: Button = $Volume/RestoreButtonVOL

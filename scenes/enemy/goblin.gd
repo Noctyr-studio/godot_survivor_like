@@ -28,15 +28,14 @@ var ITEM = preload("res://inventory/Item.tscn")
 
 
 
-@onready var recalc_timer: Timer = $RecalcTimer
+#@onready var recalc_timer: Timer = $RecalcTimer
 
 @onready var sprite_animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var health_component: HealthComponent = $Components/HealthComponent
 
-@onready var castle = get_node("/root/World/Castle")
+
 @onready var player = get_node("/root/World/Player")
-@onready var archer = get_node("/root/World/Archer")
-@onready var fortress = get_node("/root/World/Fortress")
+
 
 @onready var atk = $AudioStreamPlayerATK
 
@@ -118,7 +117,7 @@ func attack():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprite_animation.animation == "attack":
-		fortress.health_component.receive_damage(attack_damage) 
+		
 		world.hp -= attack_damage
 		HP_label.text = "HP: " + str(world.hp)
 		

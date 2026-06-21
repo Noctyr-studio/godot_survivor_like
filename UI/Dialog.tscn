@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgd1drxf3khs5"]
+[gd_scene format=3 uid="uid://dgd1drxf3khs5"]
 
 [ext_resource type="Script" uid="uid://die4ogruapa6k" path="res://scenes/shop/dialog.gd" id="1_gxqm6"]
 [ext_resource type="Texture2D" uid="uid://ca5luf4ctodsi" path="res://art/UI/Buttons/Button_Hover_3Slides.png" id="2_5w7iy"]
@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://nhuspb4j46tc" path="res://art/UI/Buttons/Button_Blue_3Slides.png" id="8_u330x"]
 [ext_resource type="Texture2D" uid="uid://dgii26q667qtf" path="res://art/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="9_ku0ep"]
 
-[node name="Dialog" type="CanvasLayer"]
+[node name="Dialog" type="CanvasLayer" unique_id=17838461]
 process_mode = 3
 script = ExtResource("1_gxqm6")
 
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1412740202]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect" type="TextureRect" parent="ReferenceRect"]
+[node name="TextureRect" type="TextureRect" parent="ReferenceRect" unique_id=2132673705]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -34,7 +34,7 @@ grow_vertical = 0
 scale = Vector2(0.85, 0.85)
 texture = ExtResource("2_ox71m")
 
-[node name="Texto" type="Label" parent="ReferenceRect/TextureRect"]
+[node name="Texto" type="Label" parent="ReferenceRect/TextureRect" unique_id=220522951]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 12
@@ -50,7 +50,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Hello Sir, How can I help you??"
 
-[node name="TRADE" type="TextureButton" parent="ReferenceRect/TextureRect"]
+[node name="TRADE" type="TextureButton" parent="ReferenceRect/TextureRect" unique_id=822405583]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 130.0
@@ -59,7 +59,7 @@ offset_bottom = 202.0
 texture_normal = ExtResource("2_5w7iy")
 texture_pressed = ExtResource("6_xbx8d")
 
-[node name="Label" type="Label" parent="ReferenceRect/TextureRect/TRADE"]
+[node name="Label" type="Label" parent="ReferenceRect/TextureRect/TRADE" unique_id=2127819949]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 3.0
@@ -69,7 +69,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "TRADE"
 
-[node name="CLOSE" type="TextureButton" parent="ReferenceRect/TextureRect"]
+[node name="CLOSE" type="TextureButton" parent="ReferenceRect/TextureRect" unique_id=572438934]
 layout_mode = 0
 offset_left = 327.0
 offset_top = 130.0
@@ -78,7 +78,7 @@ offset_bottom = 202.0
 texture_normal = ExtResource("8_u330x")
 texture_pressed = ExtResource("9_ku0ep")
 
-[node name="Label" type="Label" parent="ReferenceRect/TextureRect/CLOSE"]
+[node name="Label" type="Label" parent="ReferenceRect/TextureRect/CLOSE" unique_id=1110330876]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 3.0

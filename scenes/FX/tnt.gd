@@ -8,7 +8,7 @@ var target
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var fortress = get_node("/root/World/Fortress")
+
 @onready var player = get_node("/root/World/Player")
 
 func _ready() -> void:
